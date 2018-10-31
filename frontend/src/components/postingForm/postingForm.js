@@ -1,10 +1,12 @@
 import React from "react"
+import "./postingForm.scss"
 
 class PostingForm extends React.Component {
+
   render() {
     return (
       <div className="wrapper">
-        <form id="postingForm" method="post" action="http://localhost:8081/products">
+        <form id="postingForm" className="postingForm" method="post" action="http://localhost:8081/products">
           <input type="text" placeholder="Enter your email address" name="email" required />
           <input type="text" placeholder="Title" name="title" required />
           <textarea rows="4" cols="50" name="description" form="postingForm" required />
