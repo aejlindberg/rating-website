@@ -38,6 +38,27 @@ app.get("/products/", (req, res) => {
   })
 })
 
+let currentProduct={}
+
+app.get("/products/:productID", (req,res) => {
+  const id = parseInt(req.params.id)
+  currentProduct= products.find(product => product.productID===id)
+  
+}
+//
+// app.put("/products/:productID", (req, res) => {
+//   Product.findByID(req.params.productID, function(err, product){
+//
+//     if (err) res.send (err);
+//     product.rating=req.body.rating;
+//     product.save(function(err){
+//       if (err)
+//
+//     })
+//   })
+// })
+
+
 app.post("/products/", (req, res) => {
   const product = new Product(req.body)
   console.log("Body: ", req.body)
