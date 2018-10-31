@@ -19,7 +19,7 @@ mongoose.connection.once("open", () => console.log("Connected to mongodb"))
 
 const Product = mongoose.model("Product", {
   productID: Number,
-  sellerID: String,
+  email: String,
   title: String,
   description: String,
   price: Number,
