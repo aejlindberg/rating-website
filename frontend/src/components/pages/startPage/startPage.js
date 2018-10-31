@@ -1,4 +1,5 @@
 import React from "react"
+import SingleProduct from "../../singleProduct/singleProduct.js"
 import "./startPage.scss"
 
 class StartPage extends React.Component {
@@ -24,9 +25,19 @@ componentDidMount() {
 }
 
 render() {
+  const { products } = this.state
   return (
-    <div>
-      <br />
+    <div className="wrapper">
+      {products.map((product, index) => {
+        return <SingleProduct
+          key={index}
+          email={product.email}
+          title={product.title}
+          description={product.description}
+          price={product.price}
+          category={product.category}
+          rating={product.rating} />
+      })}
     </div>
   )
 }
