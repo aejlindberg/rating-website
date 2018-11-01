@@ -1,5 +1,6 @@
 import React from "react"
-import SingleProduct from "../../singleProduct/singleProduct.js"
+import AllProductsList from "../../allProductsList/allProductsList.js"
+import TopProductsList from "../../topProductsList/topProductsList.js"
 import "./startPage.scss"
 
 class StartPage extends React.Component {
@@ -14,7 +15,7 @@ getProducts = () => {
     .then(response => response.json())
     .then(products => {
       this.setState({
-        products: products
+        products
       })
       console.log(products)
     })
@@ -28,16 +29,10 @@ render() {
   const { products } = this.state
   return (
     <div className="wrapper">
-      {products.map((product, index) => {
-        return <SingleProduct
-          key={index}
-          email={product.email}
-          title={product.title}
-          description={product.description}
-          price={product.price}
-          category={product.category}
-          rating={product.rating} />
-      })}
+      <AllProductsList
+        products={products} />
+      <TopProductsList
+        products={products} />
     </div>
   )
 }
