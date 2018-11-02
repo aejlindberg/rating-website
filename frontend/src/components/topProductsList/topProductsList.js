@@ -24,7 +24,7 @@ render() {
     <div className="topProductsListContainer">
       {topTenProducts
         .sort((a,b)=>(a.price<b.price) ? 1 : ((b.price<a.price) ? -1 : 0))
-        .splice(2)
+        .splice(0, 10)
         .map((product, index) => <SingleProduct
           key={index}
           email={product.email}
