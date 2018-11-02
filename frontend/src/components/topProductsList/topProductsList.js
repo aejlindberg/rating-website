@@ -4,36 +4,39 @@ import "./topProductsList.scss"
 
 class TopProductsList extends React.Component {
 
-state = {
-  topList: []
+sortTopRating= () => {
+  const sortingList =this.props.products
+  console.log(sortingList, "sorting List")
+  sortingList.sort((a,b)=>(a.price<b.price) ? 1 : ((b.price<a.price) ? -1 : 0))
+  const sortedTopTen =  sortingList.slice(0,9)
 }
 
-sortProductsByRating = () => {
-  this.setState({
-    topList: this.props.products
-  }, () => console.log("Props: ", this.props.products))
-}
 
-componentDidMount() {
-  this.sortProductsByRating()
-}
+
+
 
 render() {
   console.log(this.props.products)
-  console.log(this.state.topList)
+  this.sortTopRating()
+
+  const topTenProducts = this.props.products
   return (
     <div className="topProductsListContainer">
-      {this.state.topList.map((product, index) => <SingleProduct
-        key={index}
-        email={product.email}
-        title={product.title}
-        description={product.description}
-        price={product.price}
-        category={product.category}
-        rating={product.rating} />)}
+      {topTenProducts
+        .sort((a,b)=>(a.price<b.price) ? 1 : ((b.price<a.price) ? -1 : 0))
+        .splice(2)
+        .map((product, index) => <SingleProduct
+          key={index}
+          email={product.email}
+          title={product.title}
+          description={product.description}
+          price={product.price}
+          category={product.category}
+          rating={product.rating} />)}
     </div>
   )
 }
 }
+
 
 export default TopProductsList

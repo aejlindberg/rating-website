@@ -30,9 +30,9 @@ render() {
   return (
     <div className="wrapper">
       <AllProductsList
-        products={products} />
+        products={this.state.products} />
       <TopProductsList
-        products={products} />
+        products={this.state.products} />
     </div>
   )
 }
