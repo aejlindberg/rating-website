@@ -14,9 +14,7 @@ componentDidUpdate(prevProps) {
 }
 
 render() {
-  console.log("All Items: ", this.props.products)
   const topTenProducts = this.props.products
-  console.log("Top Ten: ", topTenProducts)
   return (
     <div className="topProductsListContainer">
       {topTenProducts
