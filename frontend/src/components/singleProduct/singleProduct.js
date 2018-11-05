@@ -1,5 +1,5 @@
 import React from "react"
-import ratingCounter from "../../RatingCounter"
+import RatingCounter from "../RatingCounter/RatingCounter"
 
 class SingleProduct extends React.Component {
 
@@ -13,9 +13,9 @@ class SingleProduct extends React.Component {
         <p>{this.props.rating}</p>
 
         <RatingCounter
-          changeRating={(ratingCounter_index, delta) => changeRating(ratingCounter_index, delta)}
-          index={index}
-          rating={rating} />
+          changeRating={(ratingCounter_index, delta) => this.props.changeRating(ratingCounter_index, delta)}
+          index={this.props.key}
+          rating={this.props.rating} />
       </div>
     )
   }

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-const ratingCounter =({index, rating, changeRating) => {
+const RatingCounter =({index, rating, changeRating}) => {
 
 
 
@@ -14,4 +14,4 @@ const ratingCounter =({index, rating, changeRating) => {
 }
 
 
-export default ratingCounter
+export default RatingCounter

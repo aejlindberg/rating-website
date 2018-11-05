@@ -25,7 +25,9 @@ handleRatingChange = (index, delta) => {
   console.log(index, delta)
   this.setState(prevState => {
     prevState.products[index].rating += delta;
+})
 }
+
 
 componentDidMount() {
   this.getProducts()
@@ -47,6 +49,6 @@ render() {
   )
 }
 }
-}
+
 
 export default StartPage
