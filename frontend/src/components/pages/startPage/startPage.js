@@ -21,6 +21,12 @@ getProducts = () => {
     })
 }
 
+handleRatingChange = (index, delta) => {
+  console.log(index, delta)
+  this.setState(prevState => {
+    prevState.products[index].rating += delta;
+}
+
 componentDidMount() {
   this.getProducts()
 }
@@ -30,13 +36,17 @@ render() {
   return (
     <div className="wrapper">
       <AllProductsList
-        products={this.state.products} />
+        products={this.state.products}
+        changeRating={(index,delta)=>this.props.handleRatingChange(index,delta)}
+      />
       <TopProductsList
-        products={this.state.products} />
+        products={this.state.products}
+        changeRating={(index,delta)=>this.props.handleRatingChange(index,delta)}
+      />
     </div>
   )
 }
-
+}
 }
 
 export default StartPage
