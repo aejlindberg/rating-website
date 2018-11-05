@@ -4,27 +4,24 @@ import "./topProductsList.scss"
 
 class TopProductsList extends React.Component {
 
-sortTopRating= () => {
-  const sortingList =this.props.products
-  console.log(sortingList, "sorting List")
-  sortingList.sort((a,b)=>(a.price<b.price) ? 1 : ((b.price<a.price) ? -1 : 0))
-  const sortedTopTen =  sortingList.slice(0,9)
+state = {
+  products: []
 }
 
-
-
-
+componentDidUpdate(prevProps) {
+  if (prevProps !== this.props)
+  this.setState({ ...this.props })
+}
 
 render() {
-  console.log(this.props.products)
-  this.sortTopRating()
-
+  console.log("All Items: ", this.props.products)
   const topTenProducts = this.props.products
+  console.log("Top Ten: ", topTenProducts)
   return (
     <div className="topProductsListContainer">
       {topTenProducts
         .sort((a,b)=>(a.price<b.price) ? 1 : ((b.price<a.price) ? -1 : 0))
-        .splice(0, 10)
+        .slice(0, 10)
         .map((product, index) => <SingleProduct
           key={index}
           email={product.email}
