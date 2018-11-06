@@ -19,6 +19,7 @@ class PostingForm extends React.Component {
             <option value="bears">Bears</option>
           </select>
           <input type="number" placeholder="Rating" name="rating" required />
+          <input type="number" placeholder="Rating" name="nrOfVotes" value="0" required />
           <input type="submit" />
         </form>
       </div>
