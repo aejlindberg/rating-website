@@ -14,7 +14,7 @@ class SingleProduct extends React.Component {
 
         <RatingCounter
           changeRating={(ratingCounter_index, delta) => this.props.changeRating(ratingCounter_index, delta)}
-          index={this.props.key}
+          index={this.props.productIndex}
           rating={this.props.rating} />
       </div>
     )

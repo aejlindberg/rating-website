@@ -22,10 +22,9 @@ getProducts = () => {
 }
 
 handleRatingChange = (index, delta) => {
-  console.log(index, delta)
   this.setState(prevState => {
-    prevState.products[index].rating += delta;
-})
+    prevState.products[index].rating += delta
+}, () => console.log(this.state.products[index].rating))
 }
 
 
@@ -39,11 +38,11 @@ render() {
     <div className="wrapper">
       <AllProductsList
         products={this.state.products}
-        changeRating={(index,delta)=>this.handleRatingChange(index,delta)}
+        changeRating={(index, delta) => this.handleRatingChange(index, delta)}
       />
       <TopProductsList
         products={this.state.products}
-        changeRating={(index,delta)=>this.handleRatingChange(index,delta)}
+        changeRating={(index, delta) => this.handleRatingChange(index, delta)}
       />
     </div>
   )

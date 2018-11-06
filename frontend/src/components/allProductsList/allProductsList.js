@@ -9,12 +9,13 @@ class AllProductsList extends React.Component {
       <div className="allProductsListContainer">
         {this.props.products.map((product, index) => <SingleProduct
           key={index}
+          productIndex={index}
           email={product.email}
           title={product.title}
           description={product.description}
           price={product.price}
           category={product.category}
-          changeRating={(index, delta) => this.props.changeRating(index, delta)}
+          changeRating={(bIndex, delta) => this.props.changeRating(bIndex, delta)}
                                                      />
         )}
       </div>

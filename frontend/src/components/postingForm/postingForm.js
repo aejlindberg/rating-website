@@ -18,6 +18,7 @@ class PostingForm extends React.Component {
             <option value="music">Music</option>
             <option value="bears">Bears</option>
           </select>
+          <input type="number" placeholder="Rating" name="rating" required />
           <input type="submit" />
         </form>
       </div>
