@@ -14,7 +14,7 @@ class AllProductsList extends React.Component {
           description={product.description}
           price={product.price}
           category={product.category}
-          changeRating={(index, delta)=>this.props.handleRatingChange(index, delta)}
+          changeRating={(index, delta) => this.props.changeRating(index, delta)}
                                                      />
         )}
       </div>

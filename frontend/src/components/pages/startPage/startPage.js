@@ -39,11 +39,11 @@ render() {
     <div className="wrapper">
       <AllProductsList
         products={this.state.products}
-        changeRating={(index,delta)=>this.props.handleRatingChange(index,delta)}
+        changeRating={(index,delta)=>this.handleRatingChange(index,delta)}
       />
       <TopProductsList
         products={this.state.products}
-        changeRating={(index,delta)=>this.props.handleRatingChange(index,delta)}
+        changeRating={(index,delta)=>this.handleRatingChange(index,delta)}
       />
     </div>
   )
