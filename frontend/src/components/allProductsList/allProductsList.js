@@ -6,16 +6,18 @@ class AllProductsList extends React.Component {
 
   render() {
     return (
-      <div className="allProductsListContainer">
-        {this.props.products.map((product, index) => <SingleProduct
-          key={index}
-          email={product.email}
-          title={product.title}
-          description={product.description}
-          price={product.price}
-          category={product.category}
-          changeRating={(index, delta)=>this.props.handleRatingChange(index, delta)}
-                                                     />
+      <div className="allProductsListWrapper">
+        <h2>All products</h2>
+        {this.props.products.map((product, index) => <div className="allProductsListContainer">
+          <SingleProduct
+            key={index}
+            email={product.email}
+            title={product.title}
+            description={product.description}
+            price={product.price}
+            category={product.category}
+            changeRating={(index, delta)=>this.props.handleRatingChange(index, delta)} />
+        </div>
         )}
       </div>
     )

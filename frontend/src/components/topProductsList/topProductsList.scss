@@ -1,0 +1,22 @@
+.topProductsListContainer {
+
+  .singleProductContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .productImage {
+    width: 40%;
+  }
+  .productText {
+    margin-left: 10px;
+    padding: 5px;
+    width: 60%;
+    h3 {
+      margin-top: 0;
+    }
+    p {
+      margin-top: 0;
+    }
+  }
+}

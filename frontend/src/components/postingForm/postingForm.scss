@@ -1,5 +1,47 @@
-.postingForm {
+$fontsizeInput: 18px;
+$fontFamily: Arial;
+
+%centerHorizontal {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  align-items: center;
+}
+
+%noMarginPadding {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-family: $fontFamily;
+  font-size: 30px;
+}
+
+.postingFormContainer {
+  @extend %centerHorizontal;
+}
+
+.postingForm {
+  @extend %centerHorizontal;
+  @extend %noMarginPadding;
+  width: 100%;
+}
+
+.formInput {
+  width: 80%;
+  font-family: $fontFamily;
+  font-size: $fontsizeInput;
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.submitButton {
+  font-size: $fontsizeInput;
+  background-color: #000;
+  color: #fff;
+  width: 100px;
+  height: 50px;
+  margin: 10px 0;
+  border: none;
 }
