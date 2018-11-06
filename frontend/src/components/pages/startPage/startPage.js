@@ -24,9 +24,12 @@ getProducts = () => {
 handleRatingChange = (index, delta) => {
   this.setState(prevState => {
     prevState.products[index].rating += delta
-}, () => console.log(this.state.products[index].rating))
+}, () => {})
 }
 
+updateDBRating = () => {
+
+}
 
 componentDidMount() {
   this.getProducts()

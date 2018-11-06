@@ -51,7 +51,7 @@ app.put("/products/:objectID", (req, res) => {
   Product.findById(req.params.objectID, function(err, product) {
     if (err) res.send(err)
 
-    product.rating = 5
+    product.rating = req.body.rating
 
     product.save(function(err) {
       if(err) res.send(err)
