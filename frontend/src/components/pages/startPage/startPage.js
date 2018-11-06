@@ -24,12 +24,29 @@ getProducts = () => {
 handleRatingChange = (index, delta) => {
   this.setState(prevState => {
     prevState.products[index].rating += delta
-}, () => {})
+}, () => this.updateDBRating(index))
 }
 
-updateDBRating = () => {
-
+updateDBRating = index => {
+  console.log(this.state.products[index].rating)
+  const updatedProduct = JSON.stringify(this.state.products[index])
+  const query = `http://localhost:8081/products/${this.state.products[index]._id}`
+  fetch(query, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "PUT",
+      body: updatedProduct
+  })
+  .then(data => {
+    console.log('Request success: ', data)
+    this.getProducts()
+  })
+  .catch(error => {
+    console.log('Request failure: ', error)
+  })
 }
+
 
 componentDidMount() {
   this.getProducts()

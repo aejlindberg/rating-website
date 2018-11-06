@@ -52,6 +52,7 @@ app.put("/products/:objectID", (req, res) => {
     if (err) res.send(err)
 
     product.rating = req.body.rating
+    console.log(product)
 
     product.save(function(err) {
       if(err) res.send(err)
