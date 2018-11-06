@@ -22,10 +22,29 @@ getProducts = () => {
 }
 
 handleRatingChange = (index, delta) => {
-  console.log(index, delta)
   this.setState(prevState => {
-    prevState.products[index].rating += delta;
-})
+    prevState.products[index].rating += delta
+}, () => this.updateDBRating(index))
+}
+
+updateDBRating = index => {
+  console.log(this.state.products[index].rating)
+  const updatedProduct = JSON.stringify(this.state.products[index])
+  const query = `http://localhost:8081/products/${this.state.products[index]._id}`
+  fetch(query, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "PUT",
+      body: updatedProduct
+  })
+  .then(data => {
+    console.log('Request success: ', data)
+    this.getProducts()
+  })
+  .catch(error => {
+    console.log('Request failure: ', error)
+  })
 }
 
 
@@ -39,11 +58,11 @@ render() {
     <div className="wrapper">
       <AllProductsList
         products={this.state.products}
-        changeRating={(index,delta)=>this.props.handleRatingChange(index,delta)}
+        changeRating={(index, delta) => this.handleRatingChange(index, delta)}
       />
       <TopProductsList
         products={this.state.products}
-        changeRating={(index,delta)=>this.props.handleRatingChange(index,delta)}
+        changeRating={(index, delta) => this.handleRatingChange(index, delta)}
       />
     </div>
   )
