@@ -17,7 +17,7 @@ class AllProductsList extends React.Component {
           category={product.category}
           rating={product.rating}
           changeRating={(bIndex, delta) => this.props.changeRating(bIndex, delta)}
-         />
+                                                     />
         )}
       </div>
     )

@@ -22,12 +22,15 @@ render() {
         .slice(0, 10)
         .map((product, index) => <SingleProduct
           key={index}
+          productIndex={index}
           email={product.email}
           title={product.title}
           description={product.description}
           price={product.price}
           category={product.category}
-          rating={product.rating} />)}
+          rating={product.rating}
+          changeRating={(bIndex, delta) => this.props.changeRating(bIndex, delta)}
+                                 />)}
     </div>
   )
 }
