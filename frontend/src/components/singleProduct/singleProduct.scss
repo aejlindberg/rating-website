@@ -1,16 +1,19 @@
+span {
+  color: green;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 .singleProductContainer {
   width: 100%;
   margin: 20px 0;
   border: 1px solid #000;
   background-color: #fff;
 }
+.singleProductCategory img {
+  width: 32px;
+}
 
 .productImage {
   background-color: #e5e5e5;
-}
-
-span {
-  color: green;
-  font-weight: bold;
-  font-size: 20px;
 }

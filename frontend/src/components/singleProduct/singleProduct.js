@@ -9,7 +9,7 @@ class SingleProduct extends React.Component {
     let image = ""
     switch (this.props.category) {
       case "clothing":
-        image = "./clothes.svg"
+        image = "./jeans.svg"
         break
       case "shoes":
         image = "./shoes.svg"
@@ -31,7 +31,6 @@ render() {
             <p>{this.props.description}</p>
             <div className="singleProductCategory">
               <img src={this.checkIcon()} alt="category" />
-              <p>Category: {this.props.category}</p>
             </div>
             <div className="singleProductDataContainer">
               <div className="productPrice">
