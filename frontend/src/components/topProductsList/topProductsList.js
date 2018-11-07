@@ -4,15 +4,6 @@ import "./topProductsList.scss"
 
 class TopProductsList extends React.Component {
 
-state = {
-  products: []
-}
-
-componentDidUpdate(prevProps) {
-  if (prevProps !== this.props)
-  this.setState({ ...this.props })
-}
-
 render() {
   const topTenProducts = this.props.products
   return (
@@ -22,18 +13,20 @@ render() {
         .sort((a,b)=>(a.rating<b.rating) ? 1 : ((b.rating<a.rating) ? -1 : 0))
         .slice(0, 10)
         .map((product, index) => <div className="topProductsListContainer">
-        <SingleProduct
-          key={index}
-          productIndex={index}
-          email={product.email}
-          title={product.title}
-          description={product.description}
-          price={product.price}
-          category={product.category}
-          rating={product.rating}
-          changeRating={(bIndex, delta) => this.props.changeRating(bIndex, delta)}
-        />
-     </div>)}
+          <SingleProduct
+            key={index}
+            productId={product._id}
+            nrOfVotes={product.nrOfVotes}
+            email={product.email}
+            title={product.title}
+            description={product.description}
+            image={product.image}
+            price={product.price}
+            category={product.category}
+            rating={product.rating}
+            changeRating={(bIndex, delta) => this.props.changeRating(bIndex, delta)}
+          />
+        </div>)}
     </div>
   )
 }
