@@ -5,13 +5,27 @@
     flex-direction: row;
     width: 100%;
   }
+  .singleProductInfoContainer {
+    width: 60%;
+  }
+  .singleProductDataContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+    p {
+      font-size: 9px;
+      margin: 0;
+      padding: 0;
+    }
+  }
   .productImage {
     width: 40%;
   }
   .productText {
-    margin-left: 10px;
+    box-sizing: border-box;
     padding: 5px;
-    width: 60%;
+    width: 100%;
     h3 {
       margin-top: 0;
     }

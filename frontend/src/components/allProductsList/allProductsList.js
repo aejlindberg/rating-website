@@ -7,6 +7,7 @@ class AllProductsList extends React.Component {
   render() {
     return (
       <div className="allProductsListContainer">
+        <h2>All products</h2>
         {this.props.products.map((product, index) => <div className="allProductsListContainer">
           <SingleProduct
             key={index}
