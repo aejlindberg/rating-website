@@ -12,6 +12,7 @@ class AllProductsList extends React.Component {
           <SingleProduct
             key={index}
             productId={product._id}
+            nrOfVotes={product.nrOfVotes}
             email={product.email}
             title={product.title}
             description={product.description}

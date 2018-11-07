@@ -4,15 +4,6 @@ import "./topProductsList.scss"
 
 class TopProductsList extends React.Component {
 
-state = {
-  products: []
-}
-
-componentDidUpdate(prevProps) {
-  if (prevProps !== this.props)
-  this.setState({ ...this.props })
-}
-
 render() {
   const topTenProducts = this.props.products
   return (
@@ -25,6 +16,7 @@ render() {
         <SingleProduct
           key={index}
           productId={product._id}
+          nrOfVotes={product.nrOfVotes}
           email={product.email}
           title={product.title}
           description={product.description}

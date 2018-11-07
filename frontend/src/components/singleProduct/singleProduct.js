@@ -23,7 +23,7 @@ class SingleProduct extends React.Component {
                 changeRating={(ratingCounter_index, delta) => this.props.changeRating(ratingCounter_index, delta)}
                 productId={this.props.productId}
                 rating={this.props.rating} />
-                <p>Number of votes: {this.props.rating}</p>
+              <p>Number of votes: {this.props.nrOfVotes}</p>
             </div>
           </div>
         </div>
