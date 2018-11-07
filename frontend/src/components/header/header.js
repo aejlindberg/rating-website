@@ -13,6 +13,9 @@ class Header extends React.Component {
           <Link to="/">
             <p>Start</p>
           </Link>
+          <Link to="/products">
+            <p>All products</p>
+          </Link>
           <Link to="/posting">
             <p>Post an item</p>
           </Link>
