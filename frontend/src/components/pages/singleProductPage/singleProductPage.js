@@ -8,15 +8,17 @@ class SingleProductPage extends React.Component {
   }
 
   getProducts = () => {
-    const productsUrl = "http://localhost:8081/products/"
-    const id = this.state.products._id
+    console.log('Hello from GetProducts')
+    const id = this.props.match.params.id
+    const productsUrl = `http://localhost:8081/products/${id}`
+    console.log(productsUrl)
     fetch(productsUrl)
       .then(response => response.json())
       .then(products => {
+        console.log(products)
         this.setState({
           products
         })
-        console.log(products)
       })
   }
 
@@ -25,9 +27,20 @@ class SingleProductPage extends React.Component {
   }
 
   render() {
+    const product = this.state.products
     return (
       <div className="singleProductContainer">
-        <SingleProduct />
+        <SingleProduct
+          productId={product._id}
+          nrOfVotes={product.nrOfVotes}
+          email={product.email}
+          title={product.title}
+          description={product.description}
+          price={product.price}
+          category={product.category}
+          image={product.image}
+          rating={product.rating}
+        />
       </div>
     )
   }

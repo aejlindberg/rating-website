@@ -39,6 +39,13 @@ app.get("/products/", (req, res) => {
   })
 })
 
+app.get("/products/:objectID", (req, res) => {
+  Product.findById(req.params.objectID, function(err, product) {
+    if (err) res.send(err)
+    res.json(product)
+  })
+})
+
 app.post("/products/", (req, res) => {
   const product = new Product(req.body)
   console.log("Body: ", req.body)
