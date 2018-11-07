@@ -5,13 +5,18 @@ class Header extends React.Component {
 
   render() {
     return (
-      <header>
-        <Link to="/">
-          <p>StartPage</p>
-        </Link>
-        <Link to="/posting">
-          <p>PostingPage</p>
-        </Link>
+      <header className="navbar">
+        <div className="navbarLogo">
+          <p>Logo</p>
+        </div>
+        <div className="navbarLinks">
+          <Link to="/">
+            <p>Start</p>
+          </Link>
+          <Link to="/posting">
+            <p>Post an item</p>
+          </Link>
+        </div>
       </header>
     )
   }
