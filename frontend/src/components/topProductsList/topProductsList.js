@@ -24,7 +24,7 @@ render() {
         .map((product, index) => <div className="topProductsListContainer">
         <SingleProduct
           key={index}
-          productIndex={index}
+          productId={product._id}
           email={product.email}
           title={product.title}
           description={product.description}

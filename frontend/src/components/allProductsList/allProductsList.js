@@ -11,7 +11,7 @@ class AllProductsList extends React.Component {
         {this.props.products.map((product, index) => <div className="allProductsListContainer">
           <SingleProduct
             key={index}
-            productIndex={index}
+            productId={product._id}
             email={product.email}
             title={product.title}
             description={product.description}

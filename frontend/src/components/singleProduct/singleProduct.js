@@ -21,7 +21,7 @@ class SingleProduct extends React.Component {
             <div className="productRating">
               <RatingCounter
                 changeRating={(ratingCounter_index, delta) => this.props.changeRating(ratingCounter_index, delta)}
-                index={this.props.productIndex}
+                productId={this.props.productId}
                 rating={this.props.rating} />
                 <p>Number of votes: {this.props.rating}</p>
             </div>
