@@ -12,7 +12,7 @@ class PostingForm extends React.Component {
           <input className="formInput" type="email" placeholder="E-mail" name="email" required />
           <textarea className="formInput" rows="4" cols="50" placeholder="Add a description" name="description" form="postingForm" required />
           <input className="formInput" type="number" placeholder="Price" name="price" required />
-          <input className="formInput" type="file" placeholder="Image" name="image" required />
+          <input className="formInput" type="url" placeholder="Image" name="image" required />
           <select className="formInput" name="category" size="1">
             <option value="clothing">Clothing</option>
             <option value="shoes">Shoes</option>
