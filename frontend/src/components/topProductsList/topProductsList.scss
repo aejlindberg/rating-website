@@ -3,34 +3,14 @@
   .singleProductContainer {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    height: 230px;
   }
   .singleProductInfoContainer {
     width: 60%;
   }
-  .singleProductDataContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 5px;
-    p {
-      font-size: 9px;
-      margin: 0;
-      padding: 0;
-    }
-  }
+
   .productImage {
     width: 40%;
   }
-  .productText {
-    box-sizing: border-box;
-    padding: 5px;
-    width: 100%;
-    h3 {
-      margin-top: 0;
-    }
-    p {
-      margin-top: 0;
-    }
-  }
+  
 }

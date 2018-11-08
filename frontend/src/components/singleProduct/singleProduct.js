@@ -9,13 +9,13 @@ class SingleProduct extends React.Component {
     let image = ""
     switch (this.props.category) {
       case "clothing":
-        image = "./jeans.svg"
+        image = "/jeans.svg"
         break
       case "shoes":
-        image = "./shoes.svg"
+        image = "/shoes.svg"
         break
       default:
-        image = "./music.svg"
+        image = "/music.svg"
     }
     return image
   }
