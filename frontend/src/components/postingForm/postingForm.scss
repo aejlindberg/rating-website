@@ -36,6 +36,12 @@ h2 {
   border: 1px solid #ccc;
 }
 
+.thumbnail{
+  width: 300px;
+  height: 400px;
+  object-fit: contain;
+}
+
 .submitButton {
   font-size: $fontsizeInput;
   background-color: #000;

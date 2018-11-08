@@ -4,7 +4,7 @@ class ImageFile extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      id : "someUniqueId", // I would use this.props.id for a real world implementation
+      id : "", 
       imageURI : null
     }
   }
@@ -13,10 +13,10 @@ class ImageFile extends React.Component {
     let imgTag = null;
     if (this.state.imageURI !== null)
       imgTag = (<div className="row">
-                  <div className="small-9 small-centered columns">
-                    <img className="thumbnail" src={this.state.imageURI}></img>
-                  </div>
-                </div>);
+        <div className="small-9 small-centered columns">
+          <img className="thumbnail" src={this.state.imageURI}></img>
+        </div>
+      </div>);
     return imgTag;
   }
 
@@ -31,9 +31,9 @@ class ImageFile extends React.Component {
   }
 
   handleChange(e){
-    this.readURI(e); // maybe call this with webworker or async library?
+    this.readURI(e); //
     if (this.props.onChange !== undefined)
-      this.props.onChange(e); // propagate to parent component
+      this.props.onChange(e);
   }
 
   render() {
