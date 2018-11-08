@@ -26,10 +26,12 @@ class AllProductsPage extends React.Component {
 render() {
   const { products } = this.state
   return (
-    <div className="allProductsContainer">
-      <AllProductsList
-        products={this.state.products}
-      />
+    <div className="wrapper">
+      <div className="allProductsContainer">
+        <AllProductsList
+          products={this.state.products}
+        />
+      </div>
     </div>
   )
   }

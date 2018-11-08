@@ -29,3 +29,19 @@ a {
     height: 100%;
   }
 }
+
+.singleProductDataContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 20px;
+  p {
+    font-size: 9px;
+  }
+  .productRating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

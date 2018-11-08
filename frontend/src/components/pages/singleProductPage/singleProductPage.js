@@ -32,7 +32,9 @@ class SingleProductPage extends React.Component {
     const product = this.state.products
     return (
       <div className="singleProductContainer">
-        <Link to="/products"><button className="singleProductBackButton">&#8592; Back to all products</button></Link>
+        <Link to="/products">
+          <button className="singleProductBackButton">&#8592; Back to all products</button>
+        </Link>
         <SingleProduct
           productId={product._id}
           nrOfVotes={product.nrOfVotes}

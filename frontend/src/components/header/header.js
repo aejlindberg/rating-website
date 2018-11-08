@@ -1,4 +1,5 @@
 import React from "react"
+import "./header.scss"
 import { Link } from "react-router-dom"
 
 class Header extends React.Component {
@@ -7,7 +8,9 @@ class Header extends React.Component {
     return (
       <header className="navbar">
         <div className="navbarLogo">
-          <p>Logo</p>
+          <Link to="/">
+            <img src="../logo.png" alt="logo" width="30px" />
+          </Link>
         </div>
         <div className="navbarLinks">
           <Link to="/">
