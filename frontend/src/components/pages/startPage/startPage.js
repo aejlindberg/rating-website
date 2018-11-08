@@ -57,19 +57,43 @@ componentDidMount() {
   this.getProducts()
 }
 
+componentDidUpdate (prevProps, prevState) {
+  if (prevState.filter !== this.state.filter) {
+    fetch(`http://localhost:8081/products?category=${this.state.filter}`)
+      .then(response => response.json())
+      .then(json => {
+        this.setState({ products: json })
+      })
+  }
+}
 
+handleFilterChange= (e) => {
+  this.setState({
+    filter:e.target.value
+  })
+}
 render() {
   const { products } = this.state
   return (
     <div className="wrapper">
-      <AllProductsList
-        products={this.state.products}
-        changeRating={(index, delta) => this.handleRatingChange(index, delta)}
-      />
+      <select onChange={this.handleFilterChange}>
+        <option value=""> All </option>
+        <option value="clothing"> Clothing </option>
+        <option value="shoes"> Shoes </option>
+        <option value="music"> Music </option>
+        <option value="bears"> Bears </option>
+      </select>
+
       <TopProductsList
         products={this.state.products}
         changeRating={(index, delta) => this.handleRatingChange(index, delta)}
       />
+
+      <AllProductsList
+        products={this.state.products}
+        changeRating={(index, delta) => this.handleRatingChange(index, delta)}
+      />
+
     </div>
   )
 }

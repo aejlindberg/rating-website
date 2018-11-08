@@ -34,10 +34,15 @@ app.get("/", (req, res) => {
 })
 
 app.get("/products/", (req, res) => {
-  Product.find().then(products => {
+  const options = {}
+  if (req.query.category) {
+  options.category = req.query.category
+}
+  Product.find(options).then(products => {
     res.json(products)
   })
 })
+
 
 app.get("/products/:objectID", (req, res) => {
   Product.findById(req.params.objectID, function(err, product) {
