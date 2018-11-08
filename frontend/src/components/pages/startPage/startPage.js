@@ -6,7 +6,8 @@ import "./startPage.scss"
 class StartPage extends React.Component {
 
 state = {
-  products: []
+  products: [],
+  filter: ""
 }
 
 getProducts = () => {
@@ -55,6 +56,7 @@ updateDBRating = index => {
 componentDidMount() {
   this.getProducts()
 }
+
 
 render() {
   const { products } = this.state
