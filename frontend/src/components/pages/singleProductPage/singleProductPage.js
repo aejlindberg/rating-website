@@ -1,5 +1,7 @@
 import React from "react"
+import "./singleProductPage.scss"
 import SingleProduct from "../../singleProduct/singleProduct.js"
+import { Link } from "react-router-dom"
 
 class SingleProductPage extends React.Component {
 
@@ -30,6 +32,7 @@ class SingleProductPage extends React.Component {
     const product = this.state.products
     return (
       <div className="singleProductContainer">
+        <Link to="/products"><button className="singleProductBackButton">&#8592; Back to all products</button></Link>
         <SingleProduct
           productId={product._id}
           nrOfVotes={product.nrOfVotes}
