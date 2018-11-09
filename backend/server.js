@@ -80,7 +80,7 @@ app.put("/products/:objectID", (req, res) => {
     })
   })
 })
-//
+
 // const products = [
 //   new Product({ title: "Ringo's Glasses", email: "ringo@beatles.com", description: "Ringo's favorite glasses circa 2009", price: 43, image:"https://i2-prod.mirror.co.uk/incoming/article1942077.ece/ALTERNATES/s615/Ringo-Starr.jpg", category:"clothing", rating:16, nrOfVotes: 0, productId: 1 }),
 //   new Product({ title: "Lennon's Sneakers", email: "koko@beatles.com", description: "Jon's running shoes", price: 60, image:"https://i.pinimg.com/originals/86/24/46/86244640a49c1a696881a68afc0ab63b.jpg", category:"shoes", rating:15, nrOfVotes: 0,  productId: 19 }),

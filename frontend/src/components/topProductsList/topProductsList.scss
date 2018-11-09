@@ -4,11 +4,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 230px;
+    height: 130px;
   }
   .singleProductInfoContainer {
     width: 60%;
     position: relative;
+    height: 130px;
   }
 
   .productImage {
@@ -17,7 +18,7 @@
 
   .singleProductDataContainer {
     position: absolute;
-    top: 165px;
+    bottom: 2px;
     .productPrice {
       margin-right: 50px;
     }

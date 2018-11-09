@@ -19,7 +19,6 @@ render() {
             nrOfVotes={product.nrOfVotes}
             email={product.email}
             title={product.title}
-            description={product.description}
             image={product.image}
             price={product.price}
             category={product.category}

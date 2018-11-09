@@ -38,6 +38,8 @@ render() {
             <div className="productText">
               <h3>{this.props.title}</h3>
               <p>{this.props.description}</p>
+              </div>
+
               <div className="singleProductCategory">
                 <img src={this.checkIcon()} alt="category" />
               </div>
@@ -54,7 +56,6 @@ render() {
                   </div>
                 </div>
               </div>
-            </div>
           </div>
         </div>
     )
