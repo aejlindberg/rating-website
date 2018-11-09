@@ -14,6 +14,9 @@ class SingleProduct extends React.Component {
       case "shoes":
         image = "/shoes.svg"
         break
+      case "bears":
+        image = "/angrybear.svg"
+        break
       default:
         image = "/music.svg"
     }
