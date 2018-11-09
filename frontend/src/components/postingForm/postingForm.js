@@ -54,9 +54,7 @@ submitForm = (e) => {
   })
   .then(data => {
     console.log('Request success: ', data)
-    // alert( this.state.title + " has been created!")
     this.viewNewProduct(newProduct.productId)
-    // this.clearFields()
     })
   .catch(error => {
     console.log('Request failure: ', error)
