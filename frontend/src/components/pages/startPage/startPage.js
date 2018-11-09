@@ -17,7 +17,7 @@ getProducts = () => {
     .then(response => response.json())
     .then(products => {
       this.setState({
-        products
+        products: products,
       })
       console.log(products)
     })
