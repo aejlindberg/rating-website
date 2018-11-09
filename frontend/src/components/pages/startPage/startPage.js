@@ -23,10 +23,9 @@ getProducts = () => {
 }
 
 handleRatingChange = (index, delta) => {
-  const rateProduct = this.state.products.find(product => (product._id === index))
+  console.log(index)
+  const rateProduct = this.state.products.find(product => (product.productId === index))
   const rateProductIndex = this.state.products.indexOf(rateProduct)
-  console.log(rateProduct)
-  console.log(rateProductIndex)
   this.setState(prevState => {
     prevState.products[rateProductIndex].rating += delta
   }, () => this.updateDBRating(rateProductIndex))
