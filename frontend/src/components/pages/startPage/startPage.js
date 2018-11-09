@@ -17,7 +17,7 @@ getProducts = () => {
     .then(response => response.json())
     .then(products => {
       this.setState({
-        products
+        products: products,
       })
       console.log(products)
     })
@@ -57,20 +57,20 @@ componentDidMount() {
   this.getProducts()
 }
 
-componentDidUpdate (prevProps, prevState) {
-  if (prevState.filter !== this.state.filter) {
-    fetch(`http://localhost:8081/products?category=${this.state.filter}`)
-      .then(response => response.json())
-      .then(json => {
-        this.setState({ products: json })
-      })
-  }
-}
+// componentDidUpdate (prevProps, prevState) {
+//   if (prevState.filter !== this.state.filter) {
+//     fetch(`http://localhost:8081/products?category=${this.state.filter}`)
+//       .then(response => response.json())
+//       .then(json => {
+//         this.setState({ products: json })
+//       })
+//   }
+// }
 
 handleFilterChange= (e) => {
   this.setState({
     filter:e.target.value
-  })
+  }, () => {console.log(this.state.filter)})
 }
 
 render() {
@@ -97,6 +97,7 @@ render() {
         <div className="startPage-allProductsContainer">
           <AllProductsList
             products={this.state.products}
+            filter={this.state.filter}
             changeRating={(index, delta) => this.handleRatingChange(index, delta)}
           />
         </div>
