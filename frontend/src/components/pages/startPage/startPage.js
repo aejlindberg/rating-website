@@ -1,6 +1,7 @@
 import React from "react"
 import AllProductsList from "../../allProductsList/allProductsList.js"
 import TopProductsList from "../../topProductsList/topProductsList.js"
+import Hero from "../../hero/hero.js"
 import "./startPage.scss"
 
 class StartPage extends React.Component {
@@ -71,27 +72,35 @@ handleFilterChange= (e) => {
     filter:e.target.value
   })
 }
+
 render() {
   const { products } = this.state
   return (
     <div className="wrapper">
-      <select onChange={this.handleFilterChange}>
-        <option value=""> All </option>
-        <option value="clothing"> Clothing </option>
-        <option value="shoes"> Shoes </option>
-        <option value="music"> Music </option>
-        <option value="bears"> Bears </option>
-      </select>
-
-      <TopProductsList
-        products={this.state.products}
-        changeRating={(index, delta) => this.handleRatingChange(index, delta)}
-      />
-
-      <AllProductsList
-        products={this.state.products}
-        changeRating={(index, delta) => this.handleRatingChange(index, delta)}
-      />
+      <Hero />
+      <div className="startpage-FilterContainer">
+        <select onChange={this.handleFilterChange}>
+          <option value=""> All &darr; </option>
+          <option value="clothing"> Clothing </option>
+          <option value="shoes"> Shoes </option>
+          <option value="music"> Music </option>
+          <option value="bears"> Bears </option>
+        </select>
+      </div>
+      <div className="startPage-listContainer">
+        <div className="startPage-topListContainer">
+          <TopProductsList
+            products={this.state.products}
+            changeRating={(index, delta) => this.handleRatingChange(index, delta)}
+          />
+        </div>
+        <div className="startPage-allProductsContainer">
+          <AllProductsList
+            products={this.state.products}
+            changeRating={(index, delta) => this.handleRatingChange(index, delta)}
+          />
+        </div>
+      </div>
 
     </div>
   )

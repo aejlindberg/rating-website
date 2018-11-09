@@ -8,12 +8,20 @@
   }
   .singleProductInfoContainer {
     width: 60%;
+    position: relative;
   }
 
   .productImage {
     width: 40%;
   }
 
+  .singleProductDataContainer {
+    position: absolute;
+    top: 165px;
+    .productPrice {
+      margin-right: 50px;
+    }
+  }
   a {
     margin: 0;
     padding: 0;

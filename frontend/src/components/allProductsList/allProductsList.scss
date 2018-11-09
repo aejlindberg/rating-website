@@ -5,12 +5,14 @@
     flex-direction: column;
     width: 100%;
   }
+
   .singleProductDataContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 5px;
+
   }
   .productImage {
     width: 100%;

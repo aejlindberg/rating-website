@@ -1,0 +1,17 @@
+@media screen and (min-width: 900px) {
+  .startPage-listContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+  }
+
+  .startPage-topListContainer {
+    margin: 0 10px;
+    width: 40%;
+  }
+
+  .startPage-allProductsContainer {
+    margin: 0 10px;
+    width: 60%;
+  }
+}
