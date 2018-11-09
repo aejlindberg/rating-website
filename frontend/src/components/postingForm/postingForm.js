@@ -28,8 +28,9 @@ clearFields= () => {
   })
 }
 
-viewNewProduct = () => {
-  
+viewNewProduct = (productId) => {
+  console.log("Take me to new product!")
+  window.location.replace(`http://localhost:3000/products/${productId}`)
 }
 
 submitForm = (e) => {
@@ -40,7 +41,8 @@ submitForm = (e) => {
     description: this.state.description,
     price: this.state.price,
     image: this.state.image,
-    category: this.state.category
+    category: this.state.category,
+    productId: Date.now()
   }
 
   fetch("http://localhost:8081/products", {
@@ -52,8 +54,7 @@ submitForm = (e) => {
   })
   .then(data => {
     console.log('Request success: ', data)
-    alert( this.state.title + " has been created!")
-    this.clearFields()
+    this.viewNewProduct(newProduct.productId)
     })
   .catch(error => {
     console.log('Request failure: ', error)
