@@ -26,7 +26,8 @@ const Product = mongoose.model("Product", {
   image: String,
   category: String,
   rating: Number,
-  nrOfVotes: Number
+  nrOfVotes: Number,
+  productId: Number
 })
 
 app.get("/", (req, res) => {
@@ -57,6 +58,7 @@ app.post("/products/", (req, res) => {
 
   product.nrOfVotes = 0
   product.rating = 0
+  product.productId = Date.now()
 
   product.save()
     .then(() => { res.status(201).send("Product created") })
