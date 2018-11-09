@@ -29,10 +29,11 @@ render() {
       <div>
 
         <div className="singleProductContainer">
-          <Link to={productUrl}>
-            <img className="productImage" src={this.props.image} alt="product" />
-          </Link>
-
+          <div className="productImage">
+            <Link to={productUrl}>
+              <img src={this.props.image} alt="product" />
+            </Link>
+          </div>
           <div className="singleProductInfoContainer">
             <div className="productText">
               <h3>{this.props.title}</h3>
