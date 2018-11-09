@@ -1,3 +1,10 @@
+select {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  padding: 5px 20px;
+  border: 1px solid #000;
+}
+
 @media screen and (min-width: 900px) {
   .startPage-listContainer {
     display: flex;
@@ -13,5 +20,12 @@
   .startPage-allProductsContainer {
     margin: 0 10px;
     width: 60%;
+  }
+  .startpage-FilterContainer {
+    margin: 20px 0;
+  }
+
+  .topProductsListContainer .singleProductDataContainer .productPrice {
+    margin-right: 80px;
   }
 }
