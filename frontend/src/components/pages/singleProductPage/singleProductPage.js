@@ -57,7 +57,7 @@ class SingleProductPage extends React.Component {
     }
     return (
       <div className="singleProductContainer">
-        <Link to="/products">
+        <Link to="/">
           <button className="singleProductBackButton">&#8592; Back to all products</button>
         </Link>
         {this.state.products &&

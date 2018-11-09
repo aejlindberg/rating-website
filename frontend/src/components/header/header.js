@@ -14,10 +14,7 @@ class Header extends React.Component {
         </div>
         <div className="navbarLinks">
           <Link to="/">
-            <p>Start</p>
-          </Link>
-          <Link to="/products">
-            <p>All products</p>
+            <p>Products</p>
           </Link>
           <Link to="/posting">
             <p>Post an item</p>
