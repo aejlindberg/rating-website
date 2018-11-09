@@ -20,6 +20,9 @@ select {
   .startPage-allProductsContainer {
     margin: 0 10px;
     width: 60%;
+    .productImage {
+      height: 400px;
+    }
   }
   .startpage-FilterContainer {
     margin: 20px 0;
