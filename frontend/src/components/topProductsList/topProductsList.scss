@@ -3,6 +3,7 @@
   .singleProductContainer {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     height: 230px;
   }
   .singleProductInfoContainer {
@@ -12,5 +13,9 @@
   .productImage {
     width: 40%;
   }
-  
+
+  a {
+    margin: 0;
+    padding: 0;
+  }
 }

@@ -20,12 +20,17 @@ a {
   width: 32px;
 }
 
+// .singleProductInfoContainer {
+//   position: relative;
+// }
+
 .productImage {
   background-color: #e5e5e5;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   img {
+    object-fit: cover;
+    object-position: center;
     width: 100%;
     height: 100%;
   }
@@ -44,10 +49,11 @@ a {
 }
 
 .singleProductDataContainer {
+  // position: absolute;
+  // bottom: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
   margin-top: 20px;
   padding: 5px;
   p {
