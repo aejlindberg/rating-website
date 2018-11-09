@@ -28,6 +28,10 @@ clearFields= () => {
   })
 }
 
+viewNewProduct = () => {
+  
+}
+
 submitForm = (e) => {
   e.preventDefault()
   const newProduct= {
@@ -38,6 +42,7 @@ submitForm = (e) => {
     image: this.state.image,
     category: this.state.category
   }
+
   fetch("http://localhost:8081/products", {
     headers: {
       "Content-Type": "application/json"
@@ -47,12 +52,13 @@ submitForm = (e) => {
   })
   .then(data => {
     console.log('Request success: ', data)
-  })
+    alert( this.state.title + " has been created!")
+    this.clearFields()
+    })
   .catch(error => {
     console.log('Request failure: ', error)
+    alert(error)
   })
-  alert( this.state.title + " has been created!")
-  this.clearFields()
 }
 
   render() {
