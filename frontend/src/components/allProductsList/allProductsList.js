@@ -26,6 +26,13 @@ componentDidUpdate(prevProps) {
         <h2>All products</h2>
         {this.state.products
           .sort((a,b)=>(a.productId<b.productId) ? 1 : ((b.productId<a.productId) ? -1 : 0))
+          .filter((product) => {
+            if (this.props.filter) {
+              return product.category === this.props.filter
+            } else {
+              return product
+            }
+          })
           .map((product, index) => <div className="allProductsListContainer">
           <SingleProduct
             key={index}
