@@ -6,22 +6,17 @@ import { Link } from "react-router-dom"
 class SingleProductPage extends React.Component {
 
   state = {
-    products: []
+    products: {}
   }
   handleRatingChange = (index, delta) => {
-    const rateProduct = this.state.products.find(product => (product._id === index))
-    const rateProductIndex = this.state.products.indexOf(rateProduct)
-    console.log(rateProduct)
-    console.log(rateProductIndex)
     this.setState(prevState => {
-      prevState.products[rateProductIndex].rating += delta
-    }, () => this.updateDBRating(rateProductIndex))
+      prevState.products.rating += delta
+    }, () => this.updateDBRating())
   }
 
-  updateDBRating = index => {
-    console.log(this.state.products[index].rating)
-    const updatedProduct = JSON.stringify(this.state.products[index])
-    const query = `http://localhost:8081/products/${this.state.products[index]._id}`
+  updateDBRating = () => {
+    const updatedProduct = JSON.stringify(this.state.products)
+    const query = `http://localhost:8081/products/${this.state.products._id}`
     fetch(query, {
         headers: {
           "Content-Type": "application/json"
@@ -39,14 +34,12 @@ class SingleProductPage extends React.Component {
   }
 
   getProducts = () => {
-    console.log('Hello from GetProducts')
     const id = this.props.match.params.id
     const productsUrl = `http://localhost:8081/products/${id}`
-    console.log(productsUrl)
     fetch(productsUrl)
       .then(response => response.json())
       .then(products => {
-        console.log(products)
+        console.log("RESPONSE: ", products)
         this.setState({
           products
         })
@@ -59,13 +52,17 @@ class SingleProductPage extends React.Component {
 
   render() {
     const product = this.state.products
+    if (this.state.products) {
+      const product = this.state.products
+    }
     return (
       <div className="singleProductContainer">
         <Link to="/products">
           <button className="singleProductBackButton">&#8592; Back to all products</button>
         </Link>
+        {this.state.products &&
         <SingleProduct
-          productId={product._id}
+          productId={product.productId}
           nrOfVotes={product.nrOfVotes}
           email={product.email}
           title={product.title}
@@ -74,7 +71,8 @@ class SingleProductPage extends React.Component {
           category={product.category}
           image={product.image}
           rating={product.rating}
-        />
+          changeRating={(bIndex, delta) => this.handleRatingChange(bIndex, delta)}
+        />}
       </div>
     )
   }
